@@ -18,14 +18,14 @@ describe('Categoria Endpoints', () => {
                 done();
             });
     });
-    it('listas de categoria', async() => {
+    it('listas de categoria', async () => {
         const res = await request(app)
             .get('/api/categoria/list')
             .set('token', token)
         expect(res.statusCode).toEqual(200)
     })
 
-    it('agregar un nuevo categoria', async() => {
+    it('agregar un nuevo categoria', async () => {
         const res = await request(app)
             .post('/api/categoria/add')
             .set('token', token)
@@ -36,7 +36,7 @@ describe('Categoria Endpoints', () => {
         expect(res.statusCode).toEqual(200)
     })
 
-    it('update categoria', async() => {
+    it('update categoria', async () => {
         const res = await request(app)
             .put('/api/categoria/update')
             .set('token', token)
@@ -50,7 +50,7 @@ describe('Categoria Endpoints', () => {
         expect(res.statusCode).toEqual(200)
     })
 
-    it('deactivate categoria', async() => {
+    it('deactivate categoria', async () => {
         const res = await request(app)
             .put('/api/categoria/activate')
             .set('token', token)
@@ -61,7 +61,7 @@ describe('Categoria Endpoints', () => {
         expect(res.statusCode).toEqual(200)
     })
 
-    it('activate categoria', async() => {
+    it('activate categoria', async () => {
         const res = await request(app)
             .put('/api/categoria/deactivate')
             .set('token', token)
