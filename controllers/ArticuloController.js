@@ -13,13 +13,13 @@ exports.list = async (req, res, next) => {
         if (list) {
             res.status(200).json(list)
         } else {
-            res.status(500).send({
+            res.status(494).send({
                 message: 'No existe categoria en la base de datos'
             })
         }
 
     } catch (error) {
-        res.status(200).send({
+        res.status(500).send({
             message: 'No se listo Articulos'
         })
         next(error);
