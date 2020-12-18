@@ -14,11 +14,15 @@ router.get('/list', auth.verificarAdministrador, userController.list);
 
 // api/user/register
 
-router.post('/register', userController.register);
+router.post('/register', auth.verificarAdministrador, userController.register);
 
 
 // actualizar un valor
-router.put('/update', auth.verificarVendedor, userController.update)
+router.put('/update', auth.verificarAdministrador, userController.update)
+
+router.put('/activate', auth.verificarAdministrador, userController.activate)
+
+router.put('/deactivate', auth.verificarAdministrador, userController.deactivate)
 
 
 module.exports = router;

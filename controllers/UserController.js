@@ -89,3 +89,39 @@ exports.update = async (req, res, next) => {
     }
 }
 
+
+// actualizar validar como se actualiza
+exports.activate = async (req, res, next) => {
+    try {
+        const update = await models.Usuario.update({ estado: 1 }, {
+            where: {
+                id: req.body.id
+            }
+        });
+        res.status(200).json(update)
+    } catch (error) {
+        res.status(500).send({
+            message: 'No exitoso'
+        })
+
+        next(error);
+    }
+}
+
+exports.deactivate = async (req, res, next) => {
+    try {
+        const update = await models.Usuario.update({ estado: 0 }, {
+            where: {
+                id: req.body.id
+            }
+        });
+        res.status(200).json(update)
+    } catch (error) {
+        res.status(500).send({
+            message: 'No exitoso'
+        })
+
+        next(error);
+    }
+}
+
