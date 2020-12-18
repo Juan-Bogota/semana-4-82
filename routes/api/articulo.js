@@ -8,13 +8,13 @@ const router = routerx();
 router.get('/list', articuloController.list);
 
 // api/articulo/add 
-router.post('/add', auth.verificarVendedor, articuloController.add);
+router.post('/add', articuloController.add);
 
 // api/articulo/update
-router.put('/update', auth.verificarVendedor, articuloController.update)
+router.put('/update', articuloController.update)
 
-router.put('/activate', auth.verificarVendedor, articuloController.activate)
+router.put('/activate', articuloController.activate)
 
-router.put('/deactivate', auth.verificarVendedor, articuloController.deactivate)
+router.put('/deactivate', articuloController.deactivate)
 
 module.exports = router;

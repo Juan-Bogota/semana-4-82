@@ -10,17 +10,17 @@ router.post('/login', userController.login);
 
 
 // api/auth/lista
-router.get('/list', auth.verificarAdministrador, userController.list);
+router.get('/list', userController.list);
 
 // api/user/register
 
-router.post('/register', auth.verificarAdministrador, userController.register);
+router.post('/register', userController.register);
 
 
 // actualizar un valor
-router.put('/update', auth.verificarAdministrador, userController.update)
+router.put('/update', userController.update)
 
-router.put('/activate', auth.verificarAdministrador, userController.activate)
+router.put('/activate', userController.activate)
 
 router.put('/deactivate', auth.verificarAdministrador, userController.deactivate)
 
