@@ -125,3 +125,14 @@ exports.deactivate = async (req, res, next) => {
     }
 }
 
+exports.cliente = async (req, res, next) => {
+    try {
+        const user = await models.Usuario.findAll({ where: { id: req.query.id } });
+        res.status(200).json(user); //user: user // datos hacia el front
+    } catch (error) {
+        res.status(500).send({
+            message: 'Error!!!'
+        })
+        next(error); // para que continue y no se quede en el catch 
+    }
+}

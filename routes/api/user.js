@@ -24,5 +24,5 @@ router.put('/activate', userController.activate)
 
 router.put('/deactivate', auth.verificarAdministrador, userController.deactivate)
 
-
+router.get('/cliente', userController.cliente)
 module.exports = router;
