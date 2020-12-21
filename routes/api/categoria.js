@@ -5,7 +5,7 @@ const auth = require('../../middlewares/auth');
 const router = routerx();
 
 // api/categoria/list
-router.get('/list', auth.verificarVendedor ,categoriaController.list);
+router.get('/list',categoriaController.list);
 
 // api/categoria/add 
 router.post('/add', auth.verificarVendedor, categoriaController.add);
