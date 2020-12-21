@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    queryInterface.changeColumn('Articulos', 'imagen', {
+    queryInterface.addColumn('Articulos', 'imagen', {
       type: Sequelize.STRING,
       defaultValue: 'http://placeimg.com/640/480/tech',
       allowNull: false
@@ -16,5 +16,10 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
+    queryInterface.addColumn('Articulos', 'imagen', {
+      type: Sequelize.STRING,
+      defaultValue: 'http://placeimg.com/640/480/tech',
+      allowNull: false
+    });
   }
 };

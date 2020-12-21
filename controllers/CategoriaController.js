@@ -60,11 +60,11 @@ exports.activate = async (req, res, next) => {
                 id: req.body.id
             }
         });
-        res.status(200).json(update)
+        res.status(200).json(update);
     } catch (error) {
         res.status(500).send({
             message: 'No exitoso Activate'
-        })
+        });
 
         next(error);
     }

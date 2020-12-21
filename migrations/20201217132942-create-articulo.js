@@ -23,8 +23,9 @@ module.exports = {
       estado: {
         type: Sequelize.INTEGER,
         defaultValue: 1,
+        allowNull: false,
       },
-      precio: {
+      precio_venta: {
         type: Sequelize.INTEGER,
         defaultValue: 0,
       },

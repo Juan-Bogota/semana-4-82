@@ -45,7 +45,7 @@ exports.list = async (req, res, next) => {
     }
 }
 
-exports.register = async (req, res, next) => {
+exports.add = async (req, res, next) => {
     try {
         const user = await models.Usuario.findOne({ where: { email: req.body.email } });
         if (!user) {
